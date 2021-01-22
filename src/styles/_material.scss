@@ -1,0 +1,42 @@
+@import "./variables";
+@import "./typography";
+
+.mat-form-field {
+    width: 100%;
+
+    .mat-form-field-label {
+        @include font-mixin(12px, $grey-II, normal, normal, normal);
+    }
+
+    &.mat-focused {
+        .mat-input-element {
+            @include font-mixin(12px, $secondary, normal, normal, normal);
+        }
+    }
+}
+
+.mat-input-element {
+    @include font-mixin(12px, $grey-II, normal, normal, normal);
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 20px;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: $light-grey-II;
+}
+
+.mat-button-disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: $white;
+    padding-left: 0 !important;
+}
+
+.mat-input-element {
+    padding-right: 25px !important;
+}

@@ -1,0 +1,41 @@
+<div class="popup-title">
+  <span class="grey-txt">Add job history of</span> <span class="hyperlink-txt">{{ data. name}}</span>
+</div>
+<form class="new-member-form" [formGroup]="addEditJobHistoryForm">
+  <div class="form-group">
+    <app-input-field class="app-input-field" formControlName="company_name" placeholder="Company name"
+      name="company_name">
+    </app-input-field>
+  </div>
+  <div class="form-group">
+    <app-input-field class="app-input-field" formControlName="title" placeholder="Title" name="title"></app-input-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field>
+      <input matInput [matDatepicker]="dp" placeholder="Start date" formControlName="start_date">
+      <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+      <mat-datepicker #dp></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <app-input-field class="app-input-field" formControlName="location" placeholder="Location" name="location">
+    </app-input-field>
+  </div>
+  <div class="form-group">
+    <app-input-field class="app-input-field" formControlName="description" placeholder="Descritption" name="description">
+    </app-input-field>
+  </div>
+  <div class="form-group">
+    <app-input-field class="app-input-field" formControlName="email_id" placeholder="Email Id" name="email_id">
+    </app-input-field>
+  </div>
+  <div class="buttons">
+    <button mat-raised-button class="primary-ghost" [disabled]="!addEditJobHistoryForm.valid"
+      (click)="closePopup(true)">
+      ADD
+    </button>
+    <button mat-raised-button class="popup-btn-cancel" (click)="closePopup(false)">
+      CANCEL
+    </button>
+  </div>
+</form>

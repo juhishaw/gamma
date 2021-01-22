@@ -1,0 +1,90 @@
+@import "./variables";
+@import "./typography";
+@import './mixins';
+
+.primary-ghost {
+    border: solid 1px #23c994 !important;
+    background-color: #ffffff !important;
+    border-radius: 0 !important;
+    @extend .hyperlink-txt;
+    text-transform: uppercase;
+    box-shadow: none !important;
+
+    padding: 8px;
+    max-height: 32px;
+    min-height: 32px;
+    min-width: 92px !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    &:focus {
+        outline: none;
+    }
+
+    transition: .3s;
+
+    &:hover {
+        animation: pulse 1s infinite;
+        transition: .3s;
+    }
+
+    &:disabled {
+        &:hover {
+            animation: none;
+            transition: none;
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    70% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.popup-btn-cancel {
+    max-height: 32px;
+    min-height: 32px;
+    min-width: 92px !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    border: 1px solid #DADEEB !important;
+    background-color: transparent;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+
+    @include font-mixin(12px, #7f8598, 500, 16px, 2px);
+
+    transition: .3s;
+
+    &:hover {
+        animation: pulse 1s infinite;
+        transition: .3s;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled {
+        &:hover {
+            animation: none;
+            transition: none;
+        }
+    }
+}

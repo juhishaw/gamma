@@ -1,0 +1,80 @@
+@import "./variables";
+@import "./mixins";
+
+.main-container {
+  background-color: $light-grey-I;
+  height: 100vh;
+  width: 100%;
+
+  .form-container {
+    width: 945px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background: $white;
+    box-shadow: 0 10px 20px 0 rgba(210, 210, 210, 0.5);
+    padding: 50px 0 70px 50px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .left {
+      .buttons {
+        margin-top: 10px;
+      }
+
+      .bottom {
+        position: absolute;
+        bottom: 65px;
+
+        .grey-txt {
+          margin-right: 10px;
+        }
+      }
+
+      .form-group {
+        width: 250px;
+        position: relative;
+
+        .eye-icon {
+          position: absolute;
+          top: 20px;
+          right: 2px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+      }
+
+      .form-title {
+        margin-bottom: 50px;
+      }
+    }
+
+    .right {
+      background: url('../assets/images/form-bg.jpg') no-repeat;
+      width: calc(100% - 350px);
+      height: 424px;
+      background-size: cover;
+    }
+  }
+}
+
+.logo-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+
+  .logo {
+    background: url('../assets/images/logo.svg') no-repeat;
+    width: 302px;
+    height: 80px;
+    background-size: contain;
+
+    &.logo-1 {
+      background: url('../assets/images/logo-1.svg') no-repeat;
+      height: 50px;
+    }
+  }
+}

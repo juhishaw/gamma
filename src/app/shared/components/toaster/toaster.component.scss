@@ -1,0 +1,14 @@
+.alert {
+    .message {
+        color: #fff;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+    .icon-cancel-circle {
+        position: absolute;
+        top: 17px;
+        right: 20px;
+        cursor: pointer;
+    }
+}

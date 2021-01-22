@@ -1,0 +1,11 @@
+.header-wrapper {
+    background: linear-gradient(279deg, rgba(39, 170, 226, 1) 19%, rgba(30, 62, 115, 1) 100%);
+
+    .logout {
+        position: absolute;
+        right: 50px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+    }
+}

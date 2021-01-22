@@ -1,0 +1,20 @@
+@import "./variables";
+@import "./mixins";
+
+.form-title {
+    @include font-mixin(18px, $grey-I, 500, 1.67, 5px);
+    text-align: center;
+}
+
+.hyperlink-txt {
+    @include font-mixin(12px, $primary, 500, normal, normal);
+    cursor: pointer;
+}
+
+.grey-txt {
+    @include font-mixin(12px, $grey-II, 300, normal, normal);
+}
+
+.main-title {
+    @include font-mixin(20px, $grey-III, 500, normal, normal);
+}

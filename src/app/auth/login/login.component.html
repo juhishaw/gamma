@@ -1,0 +1,46 @@
+<div class="main-container">
+  <div class="logo-wrapper">
+    <div class="logo"></div>
+  </div>
+  <div class="form-container">
+    <div class="left">
+      <div class="form-title">HAVE AN ACCOUNT? <br /> JUST SIGN IN!</div>
+      <form [formGroup]="loginForm">
+        <div class="form-group">
+          <mat-form-field>
+            <input matInput type="email" placeholder="Email" formControlName="email_id" name="email" />
+            <mat-error *ngIf="loginFormControl.email_id.errors">
+              <mat-error *ngIf="loginFormControl.email_id.errors.required">Email is required</mat-error>
+              <mat-error *ngIf="loginFormControl.email_id.errors.email">Email must be a valid email address</mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field>
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password"
+              name="password" />
+            <mat-error *ngIf="loginFormControl.password.errors">
+              <mat-error *ngIf="loginFormControl.password.errors.required">
+                Password is required
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+          <span class="material-icons eye-icon" [ngClass]="hide ? 'icon-eye' : 'icon-eye-blocked'" (click)="hide = !hide">
+          </span>
+        </div>
+        <div class="buttons">
+          <button mat-raised-button class="primary-ghost" [disabled]="loginForm.invalid" type="submit"
+            (click)="loginUser()">
+            <span *ngIf="!isLoaderActive">Sign in</span>
+            <span *ngIf="isLoaderActive">Loading...</span>
+          </button>
+        </div>
+      </form>
+      <div class="bottom">
+        <span class="grey-txt">Don’t have an account?</span>
+        <span class="hyperlink-txt" (click)="redirectToSingup()">SIGN UP</span>
+      </div>
+    </div>
+    <div class="right"></div>
+  </div>
+</div>

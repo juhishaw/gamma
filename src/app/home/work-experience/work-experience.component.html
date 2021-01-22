@@ -1,0 +1,92 @@
+<div class="work-experience-wrapper">
+  <div class="header">
+    <div class="main-title">
+      WORK EXPERIENCE
+    </div>
+    <div class="name">
+      {{userName}}
+    </div>
+  </div>
+  <div class="table-data" *ngIf="!isDataLoading; else dataLoading">
+    <div class="content">
+      <mat-table mat-table [dataSource]="dataSource" *ngIf="jobHistory.length; else emptyScreen">
+
+        <ng-container matColumnDef="company">
+          <mat-header-cell *matHeaderCellDef>
+            Company
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <span>
+              {{ element.company_name}}
+            </span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef>
+            Title
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <span>
+              {{ element.title}}
+            </span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="location">
+          <mat-header-cell *matHeaderCellDef>
+            Location
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <span>
+              {{ element.location}}
+            </span>
+          </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="month_year">
+          <mat-header-cell *matHeaderCellDef>
+            Month/Year
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <span>
+              {{ element.start_date | date:'MMMM/y'}}
+            </span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef>
+            Description
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <span>
+              {{ element.description}}
+            </span>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      </mat-table>
+
+      <ng-template #emptyScreen>
+        <ng-container>
+          <app-no-data title="No data, please add job history!"></app-no-data>
+        </ng-container>
+      </ng-template>
+
+    </div>
+    <div class="buttons">
+      <button mat-raised-button class="primary-ghost" type="button" (click)="openAddJobHistoryPopup()">
+        <span> <span class="icon-add"></span> ADD</span>
+      </button>
+    </div>
+  </div>
+  <ng-template #dataLoading>
+    <div class="data-loading">
+      <app-loader class="app-loader"></app-loader>
+    </div>
+  </ng-template>
+</div>

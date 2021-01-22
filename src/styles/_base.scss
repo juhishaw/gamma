@@ -1,0 +1,47 @@
+@import "./variables";
+@import "./mixins";
+
+html {
+  font-size: 12px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #f9f9f9;
+  font-family: Roboto, 'sans-serif'
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: #286aa6;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+
+  font-size: 12px !important;
+  color: #286aa6;
+  line-height: 17px !important;
+}

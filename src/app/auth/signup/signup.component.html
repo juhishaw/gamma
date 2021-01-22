@@ -1,0 +1,56 @@
+<div class="main-container">
+  <div class="logo-wrapper">
+    <div class="logo"></div>
+  </div>
+  <div class="form-container">
+    <div class="left">
+      <div class="form-title">SIGN UP & <br /> GET STARTED</div>
+      <form [formGroup]="signupForm">
+        <div class="form-group">
+          <mat-form-field>
+            <input matInput type="email" placeholder="Email" formControlName="email_id" name="email" />
+            <mat-error *ngIf="signupFormControl.email_id.errors">
+              <mat-error *ngIf="signupFormControl.email_id.errors.required">Email is required</mat-error>
+              <mat-error *ngIf="signupFormControl.email_id.errors.email">Email must be a valid email address</mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field>
+            <input matInput type="test" placeholder="Name" formControlName="name" name="name" />
+            <mat-error *ngIf="signupFormControl.name.errors">
+              <mat-error *ngIf="signupFormControl.name.errors.required">Name is required</mat-error>
+              <mat-error *ngIf="signupFormControl.name.errors.pattern">Name should be alphabatic</mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field>
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password"
+              name="password" />
+            <mat-error *ngIf="signupFormControl.password.errors">
+              <mat-error *ngIf="signupFormControl.password.errors.required">
+                Password is required
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+          <span class="material-icons eye-icon" [ngClass]="hide ? 'icon-eye' : 'icon-eye-blocked'"
+            (click)="hide = !hide">
+          </span>
+        </div>
+        <div class="buttons">
+          <button mat-raised-button class="primary-ghost" [disabled]="signupForm.invalid" type="submit"
+            (click)="signUpUser()">
+            <span *ngIf="!isLoaderActive">Sign up</span>
+            <span *ngIf="isLoaderActive">Loading...</span>
+          </button>
+        </div>
+      </form>
+      <div class="bottom">
+        <span class="grey-txt">Already have an account?</span>
+        <span class="hyperlink-txt" (click)="redirectToSingin()">SIGN IN</span>
+      </div>
+    </div>
+    <div class="right"></div>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<mat-form-field>
+  <input matInput [type]="type ? type : 'text'" [placeholder]="placeholder" (input)="getInputValue($event.target.value)"
+    (blur)="onBlur()" [(ngModel)]="inputValue" [disabled]="disabled" [name]="name" />
+</mat-form-field>
