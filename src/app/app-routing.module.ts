@@ -4,7 +4,7 @@ import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'auth',
+    path: '',
     loadChildren: () =>
       import('./auth/auth.module').then((mod) => mod.AuthModule),
   },
