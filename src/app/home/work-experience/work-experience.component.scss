@@ -30,6 +30,7 @@
 
             mat-header-cell {
                 @include font-mixin(14px, $grey-IV, 500, normal, normal);
+                padding: 12px 20px;
 
                 &:first-child {
                     flex: 20%
@@ -66,6 +67,7 @@
 
             mat-cell {
                 @include font-mixin(14px, $grey-IV, normal, normal, normal);
+                padding: 12px 20px;
 
                 &:first-child {
                     flex: 20%

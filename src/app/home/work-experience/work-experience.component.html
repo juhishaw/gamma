@@ -16,8 +16,9 @@
             Company
           </mat-header-cell>
           <mat-cell *matCellDef="let element">
-            <span>
-              {{ element.company_name}}
+            <span matTooltipPosition="above"
+              [matTooltip]="element.company_name.length > 45 ? element.company_name : ''">
+              {{ element.company_name | ellipsis: 45}}
             </span>
           </mat-cell>
         </ng-container>
@@ -27,8 +28,8 @@
             Title
           </mat-header-cell>
           <mat-cell *matCellDef="let element">
-            <span>
-              {{ element.title}}
+            <span matTooltipPosition="above" [matTooltip]="element.title.length > 45 ? element.title : ''">
+              {{ element.title | ellipsis: 45}}
             </span>
           </mat-cell>
         </ng-container>
@@ -38,8 +39,8 @@
             Location
           </mat-header-cell>
           <mat-cell *matCellDef="let element">
-            <span>
-              {{ element.location}}
+            <span matTooltipPosition="above" [matTooltip]="element.location.length > 30 ? element.location : ''">
+              {{ element.location | ellipsis: 30}}
             </span>
           </mat-cell>
         </ng-container>
@@ -61,8 +62,8 @@
             Description
           </mat-header-cell>
           <mat-cell *matCellDef="let element">
-            <span>
-              {{ element.description}}
+            <span matTooltipPosition="above" [matTooltip]="element.description.length > 120 ? element.description : ''">
+              {{ element.description | ellipsis: 120}}
             </span>
           </mat-cell>
         </ng-container>

@@ -9,6 +9,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { NoDataComponent } from './components/no-data/no-data.component';
 import { ToasterComponent } from './components/toaster/toaster.component';
 import { SharedService } from './shared.service';
+import { EllipsisPipe } from './pipes/ellipsis.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SharedService } from './shared.service';
     LoaderComponent,
     NoDataComponent,
     ToasterComponent,
+    EllipsisPipe,
   ],
   imports: [CommonModule, MaterialModule, ReactiveFormsModule, FormsModule],
   exports: [
@@ -26,8 +28,9 @@ import { SharedService } from './shared.service';
     InputFieldComponent,
     LoaderComponent,
     NoDataComponent,
-    ToasterComponent
+    ToasterComponent,
+    EllipsisPipe,
   ],
-  providers: [SharedService]
+  providers: [SharedService],
 })
 export class SharedModule {}
